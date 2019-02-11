@@ -17,12 +17,14 @@ function callDivNodeJSChange(){
 
 function processDivNodeJSChange(){
 	if(xhrNode.readyState<4){      //while waiting response from server
-	document.getElementById('ajaxtext').innerHTML="Loading...";
+	document.getElementById('ajaxtest').innerHTML="Loading...";
 	}
-	else if (xhrNode.readyState===4){      //4=Response from server has been completely loaded
+	else {
+		if (xhrNode.readyState===4){      //4=Response from server has been completely loaded
 		if (xhrNode.status==200 && xhr.status<300){
 			// http status between 200 to 299 are all successful
-		document.getElementById('ajaxtext').innerHTML=xhrNode.responseText;
+		document.getElementById('ajaxtest').innerHTML=xhrNode.responseText;
+		}
 		}
 	}
 }
