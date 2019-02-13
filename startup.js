@@ -7,7 +7,9 @@ function trackAndCircle(){
 	if (navigator.geolocation){
 		navigator.geolocation.watchPosition(showposition);
 		} else{
-			document.getElementById('showLocation').innerHTML='Geolocation is not supported by this browser';}}
+			document.getElementById('showLocation').innerHTML='Geolocation is not supported by this browser';}
+			loadW3HTML();
+			}
 
 function showposition(position){
 	if (userMarker){mymap.removeLayer(userMarker);}
@@ -36,3 +38,11 @@ function startup(){
 		trackAndCircle();
 	},false);
 }	   
+
+function loadW3HTML(){
+	w3.includeHTML();
+}
+
+
+
+
